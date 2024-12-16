@@ -38,18 +38,17 @@ export default class Server {
     #config = () => {
         this.#app = express();
         
-        this.#app.engine( '.hbs', engine( {
-            defaultLayout: './views/layouts/',
-            extname: '.hbs',
+        this.#app.engine( 'handlebars', engine( {
+            extname: '.handlebars',
             partialsDir: './views/partials/'
         } ) );
-        this.#app.set( 'view engine', '.hbs' );
+        this.#app.set( 'view engine', 'handlebars' );
         this.#app.set( 'views', './views' );
 
         this.#app.use( compression() );
         this.#app.use( express.json() );
 
-        this.#app.use( '/', express.static( './public/', { index: 'home' } ) );
+        this.#app.use( '/', express.static( './public/' ) );
     }
 
     /**

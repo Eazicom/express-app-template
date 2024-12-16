@@ -9,7 +9,11 @@
 'use strict';
 
 import AppConfig from '../config/app.config.js';
+import { AppRouter } from '../routers/router.js';
 import Server from "../server.js";
 
 const server = new Server();
+
+server.addRouter( AppRouter );
+
 server.listen( AppConfig.port );
