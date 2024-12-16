@@ -1,0 +1,27 @@
+{
+  "name": "express-app-template",
+  "version": "1.0.0",
+  "description": "Plantilla general para el desarrollo de una aplicación Express en Node.js.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eazicom/express-app-template.git"
+  },
+  "keywords": [],
+  "author": "Eric Adalberto Rodríguez Sánchez",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Eazicom/express-app-template/issues"
+  },
+  "homepage": "https://github.com/Eazicom/express-app-template#readme",
+  "dependencies": {
+    "compression": "^1.7.5",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1"
+  }
+}
