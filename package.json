@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Eazicom/express-app-template#readme",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "compression": "^1.7.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

@@ -49,6 +49,8 @@ export default class Server {
         this.#app.use( express.json() );
 
         this.#app.use( '/', express.static( './public/' ) );
+        this.#app.use( '/stylesheets',
+            express.static( 'node_modules/bootstrap/dist/css' ) );
     }
 
     /**
