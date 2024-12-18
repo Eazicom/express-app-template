@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="es-mx">
-    {{> shared/head}}
+<html lang="es" data-bs-theme="light">
+    <head>
+        {{> shared/metadata }}
+        {{> shared/tittle }}
+        {{> shared/styles }}
+    </head>
     <body>
         {{> shared/navigation}}
         <main class="container mt-5">
             {{{body}}}
         </main>
-        <script src="js/bootstrap.bundle.min.js" defer></script>
+        {{> shared/scripts }}
     </body>
 </html>
