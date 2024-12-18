@@ -10,7 +10,7 @@
 
 import express from 'express';
 
-export const AppRouter = express.Router();
-AppRouter.get( '/', ( req, res ) => {
+export const appRouter = express.Router();
+appRouter.get( '/', ( req, res ) => {
     res.render( 'home' );
 } );

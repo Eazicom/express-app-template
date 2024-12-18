@@ -6,5 +6,5 @@
  * Todos los derechos reservados.
  */
 
-export { AppRouter } from './app.router.js';
+export { appRouter } from './app.routers.js';
 

@@ -40,17 +40,19 @@ export default class Server {
         
         this.#app.engine( 'handlebars', engine( {
             extname: '.handlebars',
-            partialsDir: './views/partials/'
+            partialsDir: './app/views/partials/'
         } ) );
         this.#app.set( 'view engine', 'handlebars' );
-        this.#app.set( 'views', './views' );
+        this.#app.set( 'views', './app/views/' );
 
         this.#app.use( compression() );
         this.#app.use( express.json() );
 
         this.#app.use( '/', express.static( './public/' ) );
-        this.#app.use( '/stylesheets',
-            express.static( 'node_modules/bootstrap/dist/css' ) );
+        this.#app.use( '/css',
+            express.static( 'node_modules/bootstrap/dist/css/' ) );
+        this.#app.use( '/js',
+            express.static( 'node_modules/bootstrap/dist/js/' ) );
     }
 
     /**
