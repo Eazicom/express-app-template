@@ -13,8 +13,8 @@ import express from 'express';
 import { engine } from 'express-handlebars';
 
 /**
- * Provee las funciones necesarias para configurar e iniciar el servidor de
- * Express.
+ * @description Provee las funciones necesarias para configurar e iniciar el
+ * servidor de Express.
  */
 export default class Server {
 
@@ -25,7 +25,7 @@ export default class Server {
     #app;
 
     /**
-     *  Crea una nueva instancia de la clase {@link Server}.
+     * @description Crea una nueva instancia de la clase {@link Server}.
      */
     constructor() {
         this.#config();
@@ -65,8 +65,8 @@ export default class Server {
     }
 
     /**
-     * 
-     * @param {number} port
+     * Inicia el servidor de Express en el puerto especificado.
+     * @param {number} port Puerto en el que se iniciará el servidor.
      * @returns {void} Este método no retorna ningún valor.
      */
     listen = ( port ) => {

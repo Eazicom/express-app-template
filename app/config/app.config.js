@@ -11,12 +11,12 @@
 import Env from 'dotenv';
 
 /**
- * Contiene los valores establecidos para las variables de entorno
+ * @description Provee los valores establecidos para las variables de entorno.
  */
 export default class AppConfig {
 
     /**
-     * Constructor estático de la clase.
+     * @description Constructor estático de la clase.
      */
     static {
         Env.config();
@@ -25,7 +25,7 @@ export default class AppConfig {
     /**
      * Obtiene el puerto establecido en el archivo de configuración para
      * recibir solicitudes del cliente.
-     * @returns {number}
+     * @returns {number} Puerto de escucha del servidor.
      */
     static get port() {
         let value = ( process.env.PORT || '80' );
