@@ -10,7 +10,12 @@
 
 import express from 'express';
 
+/**
+ * @description Rutas de la aplicación.
+ * @type {express.Router}
+ */
 export const appRouter = express.Router();
+
 appRouter.get( '/', ( req, res ) => {
     res.render( 'home' );
 } );
