@@ -8,6 +8,18 @@
 
 'use strict';
 
-export default class HomeController {
+import Controller from "./controller.js";
 
+/**
+ * @description Controlador para la página de inicio.
+ */
+export default class HomeController extends Controller {
+
+    constructor( request, response ) {
+        super( request, response );
+    }
+
+    home = () => {
+        this._response.status( 200 ).render( 'home' );
+    }
 }

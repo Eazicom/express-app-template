@@ -9,6 +9,7 @@
 'use strict';
 
 import express from 'express';
+import HomeController from '../controllers/home.controller.js';
 
 /**
  * @description Rutas de la aplicación.
@@ -17,5 +18,11 @@ import express from 'express';
 export const appRouter = express.Router();
 
 appRouter.get( '/', ( req, res ) => {
-    res.render( 'home' );
+    const controller = new HomeController( req, res );
+    controller.home();
+} );
+
+appRouter.get( '/home', ( req, res ) => {
+    const controller = new HomeController( req, res );
+    controller.home();
 } );
