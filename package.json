@@ -1,11 +1,11 @@
 {
   "name": "express-app-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plantilla general para el desarrollo de una aplicación Express en Node.js.",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ./app/bin/www",
+    "dev": "node --watch ./app/bin/www",
     "start": "node ./app/bin/www"
   },
   "repository": {
