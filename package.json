@@ -1,6 +1,6 @@
 {
   "name": "express-app-template",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "description": "Plantilla general para el desarrollo de una aplicación Express en Node.js.",
   "main": "server.js",
   "type": "module",

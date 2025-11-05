@@ -28,6 +28,7 @@ export default class Server {
      * @description Crea una nueva instancia de la clase {@link Server}.
      */
     constructor() {
+        this.#app = express();
         this.#config();
     }
 
@@ -36,14 +37,12 @@ export default class Server {
      * @returns {void} Este método no retorna ningún valor.
      */
     #config = () => {
-        this.#app = express();
-        
         this.#app.engine( 'handlebars', engine( {
             extname: '.handlebars',
-            partialsDir: './app/views/partials/'
+            partialsDir: './app/web/views/partials/'
         } ) );
         this.#app.set( 'view engine', 'handlebars' );
-        this.#app.set( 'views', './app/views/' );
+        this.#app.set( 'views', './app/web/views/' );
 
         this.#app.use( compression() );
         this.#app.use( express.json() );
