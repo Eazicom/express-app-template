@@ -6,4 +6,5 @@
  * Todos los derechos reservados.
  */
 
+export { apiRouter } from './api.routers.js';
 export { appRouter } from './app.routers.js';

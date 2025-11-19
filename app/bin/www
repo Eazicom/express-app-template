@@ -10,7 +10,10 @@
 
 import Server from "../../server.js";
 import AppConfig from '../config/app.config.js';
-import { appRouter } from '../web/routers/router.js';
+import {
+    apiRouter,
+    appRouter
+} from '../routers/router.js';
 
 /**
  * @description Contiene la referencia al objeto del servidor de aplicaciones.
@@ -19,4 +22,5 @@ import { appRouter } from '../web/routers/router.js';
 const server = new Server();
 
 server.addRouter( appRouter );
+server.addRouter( apiRouter );
 server.listen( AppConfig.port );

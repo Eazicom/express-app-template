@@ -9,7 +9,7 @@
 'use strict';
 
 import express from 'express';
-import HomeController from '../controllers/home.controller.js';
+import HomeController from '../web/controllers/home.controller.js';
 
 /**
  * @description Rutas de la aplicación.

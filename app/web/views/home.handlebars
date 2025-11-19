@@ -1,7 +1,28 @@
 <main class="container mt-5">
-    <header class="row bb-1">
-        <h1>Master Page</h1>
-        <p class="lead">Plantilla de muestra para una aplicación de Express JS.</p>
+    <header class="row">
+        <h1>Bienvenido a la página principal</h1>
+        <p class="lead">Esta es una plantilla básica para iniciar tu aplicación web con Express JS y Handlebars.</p>
     </header>
+    <section class="row mt-4">
+        <h3>Consumo de API</h3>
+        <p>La plantilla básica consume una API de muestra que ejemplifica la carga de datos.</p>
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="text-center">
+                <tr>
+                    <th>Folio de operación</th>
+                    <th>Resultado</th>
+                    <th>Versión</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr>
+                    <td id="folio"></td>
+                    <td id="mensaje"></td>
+                    <td id="version"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </main>
 {{> shared/scripts }}
+<script type="module" src="js/controllers/home.controller.js" defer></script>
