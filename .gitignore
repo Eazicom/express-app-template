@@ -128,6 +128,9 @@ out
 # Package
 package-lock.json
 
-# JS Compiler output
-dist/*.js
-dist/*.js.map
+# TypeScript Compiler output.
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map
+

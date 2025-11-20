@@ -3,7 +3,7 @@
   "compilerOptions": {
     // File Layout
     "rootDir": "./src",
-    "outDir": "app",
+    "outDir": "dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -43,5 +43,5 @@
     "removeComments": true
   },
   "include": ["./src"],
-  "exclude": ["node_modules", "app"]
+  "exclude": ["node_modules", "dist"]
 }
