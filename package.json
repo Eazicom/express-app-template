@@ -1,13 +1,12 @@
 {
   "name": "express-app-template",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Plantilla general para el desarrollo de una aplicación Express en Node.js.",
-  "main": "server.js",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "devstart": "tsc --watch & node --watch ./app/bin/www",
     "prestart": "tsc",
-    "start": "node ./app/bin/www"
+    "start": "node ./dist/bin/www.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,10 @@
     "url": "https://github.com/Eazicom/express-app-template/issues"
   },
   "homepage": "https://github.com/Eazicom/express-app-template#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/compression": "^1.8.1"
+  },
   "dependencies": {
     "bootstrap": "^5.3.8",
     "compression": "^1.8.1",
