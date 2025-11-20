@@ -16,12 +16,13 @@ export default class AppController {
     //#region  -- Definiciòn de propiedades --
     
     /**
+     * @property {HTMLBodyElement}
      * Vista HTML asociada al controlador.
-     * @return {HTMLBodyElement}
      */
-    get view() => document.querySelector( 'body' );
+    get view() {
+        return /** @type {HTMLBodyElement} */ ( document.querySelector( 'body' ) );
+    }
     
-
     //#endregion
     
     /**
@@ -35,24 +36,22 @@ export default class AppController {
     /**
      * 
      */
-    #init = () => { }   
-}
+    #init = () => { } 
+    
+    /**
+     * Elimina la clase 'active' de todos los elementos del menú.
+     * @returns {void} Este método no retorna ningún valor.
+     */
+    #resetActiveLinks = () => {
+        const a = this.view.querySelector( 'a.active' );
+        a?.classList.remove( 'active' );
+        a?.setAttribute( 'aria-current', 'false' );
+    }
 
-/**
- * Contiene los elementos del menú de navegación.
- * @type {HTMLAnchorElement[]}
- */
-const items = /** @type {HTMLAnchorElement[]} */ (
-    /** @type {unknown} */ ( document.querySelectorAll( '.nav-link' ) )
-);
-
-/**
- * Elimina la clase 'active' de todos los elementos del menú.
- * @param {HTMLAnchorElement[]} items
- * @returns {void} Este método no retorna ningún valor.
- */
-const reset = ( items ) => {
-    items.forEach( item => item.classList.remove( 'active' ) );
+    #activeMenu = ( menu ) => {
+        this.#resetActiveLinks();
+        menu.classList.add( 'active' );
+    }
 }
 
 const getAPI = async () => {
