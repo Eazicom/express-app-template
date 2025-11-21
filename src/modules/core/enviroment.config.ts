@@ -3,18 +3,18 @@
  * Todos los derechos reservados.
  */
 
-import Enviroment from 'dotenv';
+import Env from 'dotenv';
 
 /**
  * @description Provee los valores establecidos para las variables de entorno.
  */
-class Config {
+class Enviroment {
 
     /**
      * @description Constructor estático de la clase.
      */
     static {
-        Enviroment.config();
+        Env.config();
     }
     
     /**
@@ -28,4 +28,4 @@ class Config {
     }
 }
 
-export default Config;
+export default Enviroment;

@@ -4,7 +4,7 @@
 */
 
 import type { Router } from 'express';
-import Config from '../config.js';
+import Enviroment from '../modules/core/enviroment.config.js';
 import ROUTERS from '../routers/router.js';
 import Server from "../server.js";
 
@@ -17,4 +17,4 @@ ROUTERS.forEach( ( router: Router ) => {
     SERVER.addRouter( router );
 } );
 
-SERVER.listen( Config.port );
+SERVER.listen( Enviroment.port );
