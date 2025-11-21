@@ -35,9 +35,14 @@ abstract class WebController {
      * 
      * @param anchor 
      */
-    protected active( anchor: HTMLAnchorElement ): void {
-        anchor.classList.add( 'active' );
-        anchor.setAttribute( 'aria-current', 'page' );
+    protected active( resource: string = '/' ): void {
+        if ( resource.startsWith( '/' ) === false ) {
+            resource = `/${ resource }`;
+        }
+        const a = <HTMLAnchorElement>document
+            .querySelector( `a.nav-link[href='${resource}']` );
+        a.classList.add( 'active' );
+        a.setAttribute( 'aria-current', 'page' );
     }
 }
 

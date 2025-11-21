@@ -5,9 +5,7 @@
   "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch ./dist/bin/www.js",
-    "prestart": "tsc",
-    "start": "node ./dist/bin/www.js"
+    "start": "tsc & node --watch ./dist/bin/www.js"
   },
   "repository": {
     "type": "git",

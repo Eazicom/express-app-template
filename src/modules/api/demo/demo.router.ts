@@ -11,12 +11,12 @@ import express from "express";
  */
 const API_DEMO_ROUTER: Router = express.Router();
 
-API_DEMO_ROUTER.get( "/api", ( req, res ) => {
+API_DEMO_ROUTER.get( "/api/demo", ( req, res ) => {
     const today = new Date();
     today.getTime();
     res.json( {
         folio: `API-${today.getTime()}`,
-        mensaje: "Operación exitosa",
+        mensaje: "La API de demostración está funcionando correctamente.",
         api: { version: "1.0.0" },
     } );
 } );

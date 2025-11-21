@@ -4,6 +4,7 @@
  */
 
 import WebController from '../web.controller.js';
+import HomeService from './home.service.js';
 
 /**
  * 
@@ -19,8 +20,21 @@ class HomeController extends WebController {
      * Método de inicialización.
      **/
     protected init(): void {
-        const anchor = this.view.querySelector( 'a[href="/"]' ) as HTMLAnchorElement;
-        this.active( anchor );
+        this.active();
+        this.showApiInfo();
+    }
+
+    private showApiInfo(): void {
+        const service = new HomeService()
+        service.getApiInfo().then( ( data ) => {
+            const tbody = <HTMLTableSectionElement>this.view.querySelector( "tbody" );
+            tbody.innerHTML = `<tr>
+                <td>${ data.folio }</td>
+                <td>${ data.api.version }</td>
+                <td>${ new Date().toLocaleString()}</td>
+                <td>${ data.mensaje }</td>
+            </tr>`;
+        } );
     }
 }
 
