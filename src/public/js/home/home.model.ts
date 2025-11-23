@@ -3,7 +3,7 @@
  * Todos los derechos reservados.
  */
 
-export interface HomeModelInterface {
+export interface APIResponse {
     folio: string;
     mensaje: string;
     api: {

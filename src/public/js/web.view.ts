@@ -18,6 +18,12 @@ class WebView {
     static {
         this._body = document.querySelector( 'body' ) as HTMLBodyElement;
     }
+
+    protected static createElement<K extends keyof HTMLElementTagNameMap>(
+        tagName: K,
+        options?: ElementCreationOptions): HTMLElementTagNameMap[K] {
+        return document.createElement( tagName, options );
+    }
 }
 
 export default WebView;

@@ -16,7 +16,7 @@ API_DEMO_ROUTER.get( "/api/demo", ( req, res ) => {
     today.getTime();
     res.json( {
         folio: `API-${today.getTime()}`,
-        mensaje: "La API de demostración está funcionando correctamente.",
+        mensaje: "La API de demostración funciona correctamente.",
         api: { version: "1.0.0" },
     } );
 } );

@@ -3,15 +3,15 @@
  * Todos los derechos reservados.
  */
 
-import type { HomeModelInterface } from './home.model.js';
+import type { APIResponse } from './home.model.js';
 
 class HomeService {
 
-    public async getApiInfo(): Promise<HomeModelInterface> {
+    public async demo(): Promise<APIResponse> {
         try {
             const response = await fetch( '/api/demo' );
             if ( response.ok ) {
-                return <HomeModelInterface>( await response.json() );
+                return <APIResponse>( await response.json() );
             } else {
                 return {
                     folio: `ERROR-${response.status}`,

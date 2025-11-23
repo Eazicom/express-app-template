@@ -4,7 +4,9 @@
  */
 
 import WebController from '../web.controller.js';
+import type { APIResponse } from './home.model.js';
 import HomeService from './home.service.js';
+import HomeView from './home.view.js';
 
 /**
  * 
@@ -21,19 +23,9 @@ class HomeController extends WebController {
      **/
     protected init(): void {
         this.active();
-        this.showApiInfo();
-    }
-
-    private showApiInfo(): void {
-        const service = new HomeService()
-        service.getApiInfo().then( ( data ) => {
-            const tbody = <HTMLTableSectionElement>this.view.querySelector( "tbody" );
-            tbody.innerHTML = `<tr>
-                <td>${ data.folio }</td>
-                <td>${ data.api.version }</td>
-                <td>${ new Date().toLocaleString()}</td>
-                <td>${ data.mensaje }</td>
-            </tr>`;
+        const service = new HomeService();
+        service.demo().then( ( model: APIResponse ): void => {
+            HomeView.bind( model );
         } );
     }
 }

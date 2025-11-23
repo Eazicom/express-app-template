@@ -5,7 +5,8 @@
   "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "start": "tsc & node --watch ./dist/bin/www.js"
+    "install": "npm install",
+    "start": "tsc & node ./dist/bin/www.js"
   },
   "repository": {
     "type": "git",
