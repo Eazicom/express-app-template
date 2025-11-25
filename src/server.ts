@@ -26,7 +26,9 @@ export default class Server {
      */
     private config = (): void => {
         this._app.engine( 'handlebars', engine( {
+            defaultLayout: 'main',
             extname: '.handlebars',
+            layoutsDir: './dist/views/layouts/',
             partialsDir: './dist/views/partials/'
         } ) );
         this._app.set( 'view engine', 'handlebars' );
@@ -36,6 +38,7 @@ export default class Server {
         this._app.use( express.json() );
 
         this._app.use( '/', express.static( './dist/public/' ) );
+        this._app.use( '/', express.static( './src/' ) );
         this._app.use( '/css',
             express.static( './node_modules/bootstrap/dist/css/' ) );
         this._app.use( '/js',
@@ -55,10 +58,15 @@ export default class Server {
      * @param {number} port Puerto en el que se iniciará el servidor.
      * @returns {void} Este método no retorna ningún valor.
      */
-    public listen( port: number ) {
-        this._app.listen( port, () => {
+    public listen( hostname: string, port: number ): void {
+        this._app.listen( port, hostname, ( error: Error | undefined ): void => {
             console.clear();
-            console.log( `Aplicación en línea, puerto ${port}.` );
+            if ( error )
+                console.error( `Error al iniciar el servidor: ${error.message}` );
+            else if ( hostname === "" )
+                console.log( `Servidor en línea por el puerto ${port}.` );
+            else
+                console.log( `Servidor en línea: http://${hostname}:${port}/` );
         } );
     }
 }

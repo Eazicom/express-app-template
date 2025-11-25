@@ -26,6 +26,10 @@ class Enviroment {
         let value = ( process.env.PORT || '80' );
         return parseInt( value );
     }
+
+    static get hostname(): string {
+        return process.env.HOSTNAME || "";
+    }
 }
 
 export default Enviroment;

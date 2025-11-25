@@ -17,7 +17,10 @@ API_DEMO_ROUTER.get( "/api/demo", ( req, res ) => {
     res.json( {
         folio: `API-${today.getTime()}`,
         mensaje: "La API de demostración funciona correctamente.",
-        api: { version: "1.0.0" },
+        api: {
+            version: "1.0.0",
+            fecha: new Date( 2025, 10, 19 ).toLocaleDateString()
+        }
     } );
 } );
 

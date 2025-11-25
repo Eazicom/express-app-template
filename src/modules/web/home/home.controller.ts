@@ -26,7 +26,7 @@ class HomeController extends WebController {
      * página de inicio.
      */
     public home = (): void => {
-        this._res.status( 200 ).render( 'home' );
+        this._res.status( 200 ).render( 'home', { layout: 'main' } );
     }
 }
 

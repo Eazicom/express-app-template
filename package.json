@@ -5,8 +5,10 @@
   "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "install": "npm install",
-    "start": "tsc & node ./dist/bin/www.js"
+    "build": "tsc --watch",
+    "serve": "node --watch ./dist/bin/www.js",
+    "prestart": "tsc",
+    "start": "node ./dist/bin/www.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,8 @@
   },
   "homepage": "https://github.com/Eazicom/express-app-template#readme",
   "devDependencies": {
-    "@types/express": "^5.0.5",
-    "@types/compression": "^1.8.1"
+    "@types/compression": "^1.8.1",
+    "@types/express": "^5.0.5"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",

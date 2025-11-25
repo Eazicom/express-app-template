@@ -17,4 +17,4 @@ ROUTERS.forEach( ( router: Router ) => {
     SERVER.addRouter( router );
 } );
 
-SERVER.listen( Enviroment.port );
+SERVER.listen( Enviroment.hostname, Enviroment.port );
